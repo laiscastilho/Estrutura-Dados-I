@@ -58,8 +58,23 @@ foreach(string s in valueCol)
     Console.WriteLine("Value = {0}" , s);
 }
 
+//obtendo apenas as chaves do hash
+ICollection keyCol = openWith.Keys; 
+Console.WriteLine();
+foreach(string s in keyCol)
+{
+    Console.WriteLine("Key = {0}" , s);
+}
 
-
+//remover registro do hash
+Console.WriteLine("Removendo (\"doc\")");
+openWith.Remove("doc");
+if(!openWith.ContainsKey("doc"))
+{
+    Console.WriteLine(
+        "Chave \"doc\" foi removida."
+    );
+}
 
 //openWith.Add("dib","paint.exe");
 Console.WriteLine("Programa ainda em execução.");
